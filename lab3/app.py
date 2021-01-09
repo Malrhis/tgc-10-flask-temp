@@ -5,10 +5,15 @@ import random
 
 app = Flask(__name__)
 
+# Flask is a server --> We are creating our own endpoint
 # allow us to create a server where people can connect to depending on the url
+# app.route is a 'view function'
+
+###
 @app.route('/')
 def home():
-    return "<h1>Hello World. My name is gab this is a port test</h1>"
+    return render_template('home.template.html')
+### this is a route
 
 @app.route('/about-us')
 def about():
